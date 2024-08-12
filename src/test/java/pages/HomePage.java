@@ -15,7 +15,7 @@ public class HomePage {
     public WebElement setUpIcon;
 
 
-    @FindBy(xpath = "related_setup_app_home")
+    @FindBy(id = "related_setup_app_home")
     public WebElement setUpOption;
 
 
