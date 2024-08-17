@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "./src/test/resources/features", // path of the feature files
         glue = "stepdefinitions", // path of the step definitions
-        tags = "@profile_test",
-        dryRun = false
+        tags = "@fd_details_fields",
+        dryRun = true
 )
 public class Runner {
 }

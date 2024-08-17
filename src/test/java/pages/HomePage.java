@@ -18,6 +18,10 @@ public class HomePage {
     @FindBy(id = "related_setup_app_home")
     public WebElement setUpOption;
 
+    @FindBy(xpath = "//a[@title='FD Details']")
+    public WebElement FDDetailsTab;
+
+
 
 
 

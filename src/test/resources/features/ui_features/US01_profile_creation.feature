@@ -9,6 +9,9 @@ Feature: profile_creation
     And clicks on setup option
     Then verify user is on the setup page
     And user clicks on User drop down arrow
+    And user clicks on profiles
     Then verify user profiles contains "Branch Officer"
-
+    Then verify user profiles contains "Sales Representative"
+    Then verify user profiles contains "Relationship Officer"
+#    Then close the application
 

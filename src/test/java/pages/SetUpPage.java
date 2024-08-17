@@ -26,6 +26,14 @@ public class SetUpPage {
     @FindBy(xpath = "//div[@class='listBody']//div[@class='x-grid3-cell-inner x-grid3-col-ProfileName']")
     public List<WebElement> allProfiles;
 
+    @FindBy(xpath = "(//a[.='Users'])[2]")
+    public WebElement userTab;
+
+    @FindBy(xpath = "//table[@class='list']//td[last()]")
+    public List<WebElement> allUserProfiles;
+
+
+
 
 
 }

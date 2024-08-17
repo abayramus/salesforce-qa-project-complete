@@ -63,23 +63,49 @@ public class ProfilesStepDefs {
     public void user_clicks_on_user_drop_down_arrow() {
         setUpPage.setUpUsers.click();
     }
-    @Then("verify user profiles contains {string}")
-    public void verify_user_profiles_contains(String profileName) {
+    @Then("user clicks on profiles")
+    public void user_clicks_on_profiles() {
         setUpPage.setUpProfiles.click();
 //        SWTICH TO IFRAME
 //        BrowserUtils.frameSwitchTo(1);
-        waitFor(3);
+        waitFor(2);
         frameSwitchTo(0);
+    }
+    @Then("verify user profiles contains {string}")
+    public void verify_user_profiles_contains(String profileName) {
         boolean isProfileFound=false;
         for (WebElement eachProfile :setUpPage.allProfiles ){
-            System.out.println("Profile Elements : "+eachProfile);
-            System.out.println("Profile Strings : "+eachProfile.getText());
+//            System.out.println("Profile Elements : "+eachProfile);
+//            System.out.println("Profile Strings : "+eachProfile.getText());
             if (eachProfile.getText().contains(profileName)){
                 isProfileFound=true;
             }
-
         }
         assertTrue(profileName + " BULUNAMADI!!!",isProfileFound);
+//        message kismi sadece assertion fail ederse console da cikacak.
+    }
+
+
+    @Then("user clicks on Users")
+    public void user_clicks_on_users() {
+        setUpPage.userTab.click();
+//        SWTICH TO IFRAME
+//        BrowserUtils.frameSwitchTo(1);
+        waitFor(2);
+        frameSwitchTo(0);
+    }
+
+    @Then("verify users contains {string} profiles")
+    public void verify_users_contains_profiles(String userProfiles) {
+        boolean isUserProfileFound=false;
+        for (WebElement eachUserProfiles :setUpPage.allUserProfiles ){
+//            System.out.println("Profile Elements : "+eachProfile);
+//            System.out.println("Profile Strings : "+eachProfile.getText());
+            if (eachUserProfiles.getText().contains(userProfiles)){
+                isUserProfileFound=true;
+            }
+        }
+        assertTrue(userProfiles + " BULUNAMADI!!!",isUserProfileFound);
 //        message kismi sadece assertion fail ederse console da cikacak.
     }
 }
