@@ -108,4 +108,43 @@ public class ProfilesStepDefs {
         assertTrue(userProfiles + " BULUNAMADI!!!",isUserProfileFound);
 //        message kismi sadece assertion fail ederse console da cikacak.
     }
+
+
+//    CUSTOM OBJECT STEP DEFS
+    @Then("verify custom object contains {string}")
+    public void verify_custom_object_contains(String expectedObject) {
+        waitFor(1);
+        clickWithTimeOut(setUpPage.objectManager,5);
+        waitFor(1);
+        waitFor(1);
+        setUpPage.quickFind.clear();
+        sendKeysWithTimeout(setUpPage.quickFind,expectedObject,5);
+        waitFor(3);
+        System.out.println("object name : "+setUpPage.objectName.getText());
+        verifyExpectedAndActualTextMatch(expectedObject,setUpPage.objectName);
+    }
+
+    @Then("click on {string} object")
+    public void click_on_object(String string) {
+        clickWithTimeOut(setUpPage.objectName,5);
+    }
+
+    @Then("click on {string} option in the setting")
+    public void click_on_option_in_the_setting(String string) {
+        clickWithTimeOut(setUpPage.pageLayout,5);
+    }
+
+    @Then("verify {string} layout is in the list")
+    public void verify_layout_is_in_the_list(String string) {
+        boolean isFound=false;
+        System.out.println("all layouts : "+setUpPage.pageLayoutList);
+        for (WebElement layout : setUpPage.pageLayoutList){
+            System.out.println(layout.getText());
+            if (layout.getText().contains(string)){
+                isFound=true;
+            }
+        }
+        assertTrue( "Profile is not Found!",isFound);
+    }
+
 }

@@ -33,6 +33,19 @@ public class SetUpPage {
     public List<WebElement> allUserProfiles;
 
 
+    @FindBy(xpath = "(//span[.='Object Manager'])[1]")
+    public WebElement objectManager;
+
+    @FindBy(id = "globalQuickfind")
+    public WebElement quickFind;
+
+    @FindBy(xpath = "//div[@class='scroller']//tbody//th//a")
+    public WebElement objectName;
+
+    @FindBy(xpath = "(//*[.='Page Layouts'])[1]")
+    public WebElement pageLayout;
+    @FindBy(xpath = "//div[@class='scrollerWrapper']//td[1]")
+    public List<WebElement> pageLayoutList;
 
 
 

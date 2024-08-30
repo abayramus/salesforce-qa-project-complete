@@ -11,4 +11,5 @@ Feature: user_creation
     And user clicks on Users
     Then verify users contains "Branch Officer" profiles
     Then verify users contains "Sales Representative" profiles
+    Then close the application
 

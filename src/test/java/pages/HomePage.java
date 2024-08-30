@@ -21,7 +21,12 @@ public class HomePage {
     @FindBy(xpath = "//a[@title='FD Details']")
     public WebElement FDDetailsTab;
 
-
+    @FindBy(xpath = "//div[@class='slds-icon-waffle']")
+    public WebElement appLauncher;
+    @FindBy(xpath = "//div[@class='container']//input[@class='slds-input']")
+    public WebElement appLauncherSearchBox;
+    @FindBy(xpath = "//p[@class='slds-truncate']")
+    public WebElement appLauncherResult;
 
 
 
